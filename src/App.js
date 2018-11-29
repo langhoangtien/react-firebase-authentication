@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Login  from './components/Login';
 import Main  from './components/Main';
-import style from './css/app.css';
+// import style from './css/app.css';
+import style from './css/style.css';
+import 'antd/dist/antd.css';
 
 const App = () => (
   <Router>
