@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {Button} from 'antd';
 
 class Login extends Component{
 	constructor(props){
@@ -8,7 +9,7 @@ class Login extends Component{
 	render(){
 		return(
 			<div>
-				This is Main page
+				<Button type="primary"> Login with Facebook </Button>
 			</div>
 			)
 	}

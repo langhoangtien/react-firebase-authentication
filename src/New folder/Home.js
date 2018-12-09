@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import Button from 'antd/lib/button';
-import { DatePicker, notification } from 'antd';
+// 
+import {Button, DatePicker, notification, Modal } from 'antd';
+import Info  from '../components/Info';
+// import Main  from '../components/Main';
 
+const confirm = Modal.confirm;
 const openNotification = () => {
   notification.success({
     message: 'Thông báo',
@@ -20,24 +23,32 @@ class Home extends Component{
 	}
 
 	bibiClup(){
-		console.log(this);
+		confirm({
+			title: 'Are you want to delete this Task?',
+			content: 'This is a danger acion',
+			onOk(){
+				notification.success({
+					message: 'Notice',
+					description:'The Task has been deleted!'
+				})
+			}
+		})
 	}
 	render() {
 		return (
 			<div className="row">
 				<div className="col-md-4"></div>
 				<div className="col-md-4">
-					<button className="btn btn-primary" onClick={this.handleClick}>
-					Click me
-					</button>
-					<button className="btn btn-primary" onClick={this.bibiClup }>
+					<Button type="primary" onClick={this.handleClick}> Click here </Button>	
+					<Button type="danger" onClick={this.bibiClup }>
 					bibiClup
-					</button>
+					</Button>
 				</div>
 
 				<div className="col-md-4">
 					<Button type="primary" onClick={openNotification}>Open the notification box</Button>
 					<DatePicker />
+					<Info />
 				</div>
 			</div>  
 			);
