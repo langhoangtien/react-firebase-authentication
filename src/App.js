@@ -43,9 +43,11 @@ userTwo,
 ] = users;
 console.log(userOne, userTwo);
 
-const isSearched = item => {
+const isSearched = searchTerm => item => {
 	// console.log(item);
-	item.title.toLowerCase().includes('react');
+	 return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+	// console.log(bibi);
+	// return bibi;
 }
 
 const noneStyle = {
@@ -79,6 +81,7 @@ class App extends Component {
 		this.Notice();
 	}
 
+
 	newDisMiss(id){
 		const isNotId = item => item.id !== id;
 		const updateList = this.state.list.filter(isNotId);
@@ -89,9 +92,16 @@ class App extends Component {
 	onSearchChange(e){
 		// isSearched()
 		this.setState({searchTerm: e.target.value });
+		// const hi = this.state.list.filter(isSearched(this.state.searchTerm));
+		// this.setState({list:hi});
 	}
 	render(){
+		// const { searchTerm, list } = this.state;
+		
+		// this.setState({list:hi});
+		// console.log(hi);
 			return (
+
 				<div className="container">
 				<div className="row">
 			{this.state.list.map((item,index) => {
@@ -124,8 +134,11 @@ class App extends Component {
 			<div className="col-md-12">
 			<label htmlFor="search">Search</label>
 			<input name="search" onChange={this.onSearchChange} className="form-control" type="text" />
-			{console.log(this.state.list.filter(isSearched(this.state.searchTerm)))
-		}
+			{this.state.list.filter(isSearched(this.state.searchTerm)).map((item,key) => {
+				return (
+					<p key={key}>{item.title}</p>
+					);
+			} )}
 			</div>
 			</div>
 			</div>
