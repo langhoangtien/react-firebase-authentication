@@ -30,7 +30,21 @@ const list = [
 		id: 4,
 	},
 	{
-		title: "JAVA",
+		title: "Vue",
+		description: "BEST OOP PROGRAM LANGUAGE",
+		id: 3,
+	},
+	{
+		title: "Python",
+		description: "BEST OOP PROGRAM LANGUAGE",
+		id: 3,
+	},
+	{
+		title: "C",
+		description: "BEST OOP PROGRAM LANGUAGE",
+		id: 3,
+	},{
+		title: "Golang",
 		description: "BEST OOP PROGRAM LANGUAGE",
 		id: 3,
 	}
