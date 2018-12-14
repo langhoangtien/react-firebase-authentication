@@ -2,9 +2,7 @@
 import React, { Component } from 'react';
 // import FormErorr from './FormErorr';
 
-const isSearched = searchTerm => item => {
-	item.title.toLowerCase().inclues(searchTerm.toLowerCase());
-}
+
 class FormItem extends Component{
 	constructor(props){
 		super(props);
@@ -29,10 +27,7 @@ class FormItem extends Component{
 		event.prevenDefault();
 		
 	}
-	onSearchChange(e){
-		// isSearched()
-		this.setState({seachTerm: e.target.value });
-	}
+	
 	render(){
 		return (
 		<form onSubmit = {this.handleSubmit}>
@@ -43,8 +38,7 @@ class FormItem extends Component{
 		<div className="form-group">
 		<label htmlFor="password">Password</label>
 		<input name="password" onChange={this.handleChange.bind(this)} className="form-control" value={this.state.password} type="password" />
-		<label htmlFor="search">Search</label>
-		<input name="search" onChange={this.onSearchChange} className="form-control" type="text" />
+		
 		</div>
 		<input value="submit" type="submit" className="btn btn-success"/>
 		</form>
