@@ -1,9 +1,18 @@
-var config = {
-    apiKey: "AIzaSyAGQWhxcYjZV_ewftGg1KgOSgjPsB_trbU",
-    authDomain: "react-e0672.firebaseapp.com",
-    databaseURL: "https://react-e0672.firebaseio.com",
-    projectId: "react-e0672",
-    storageBucket: "react-e0672.appspot.com",
-    messagingSenderId: "1052515977474"
-  };
-  firebase.initializeApp(config);
+import app from 'firebase/app';
+
+const config = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+};
+
+class Firebase {
+  constructor() {
+    app.initializeApp(config);
+  }
+}
+
+export default Firebase;

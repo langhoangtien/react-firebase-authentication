@@ -1,3 +1,13 @@
 import React from 'react';
-const HomePage = () => (<div>Home</div>);
+
+import  { FirebaseContext } from '../Firebase';
+
+const HomePage = () => (
+  <FirebaseContext.Consumer>
+    {firebase => {
+      return <div>I've access to Firebase and render something.</div>;
+    }}
+  </FirebaseContext.Consumer>
+);
+
 export default HomePage;
