@@ -10,9 +10,11 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import Header from '../Partical/Header';
 const App = () => (
 	<Router>
 	<div>
+	<Header/ >
 	<Navigation />
 	<Route exact path={ROUTES.LANDING} component={LandingPage} />
 	<Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
