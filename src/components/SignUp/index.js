@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
+import {withFirebase} from '../Firebase';
+import {compose}from 'recompose';
 
 
 const SignUpPage = () => (
 	<div>
-		<h1>SignUp</h1>
 		<SignUpForm />
 	</div>
 	);
@@ -17,14 +18,27 @@ const INITIAL_STATE = {
 	passwordTwo:"",
 	error:null
 };
-class SignUpForm extends Component {
+class SignUpFormBase extends Component {
 	constructor(props){
-		super(props)
+		super(props);
 		this.state = {...INITIAL_STATE};
+		console.log(INITIAL_STATE);
 	}
-	onSubmit = event =>{
-
-	}
+	onSubmit = event => {
+		event.preventDefault();
+		const{username,email,passwordOne} = this.state;
+		this.props.firebase.doCreateUserWithEmailAndPassword(email,passwordOne)
+		.then(authUser => {
+			this.setState({...INITIAL_STATE});
+			console.log(INITIAL_STATE);
+			console.log(this.state);
+			this.props.history.push(ROUTES.HOME);
+		})
+		.catch(error =>{
+			this.setState({error});
+		});
+		
+	};
 	onChange = event =>{
 		this.setState({[event.target.name]:event.target.value});
 	}
@@ -35,7 +49,7 @@ class SignUpForm extends Component {
 			passwordOne,
 			passwordTwo,
 			error
-		} =this.state;
+		} = this.state;
 		const isInvalid = passwordOne !== passwordTwo || email === "" || username ==="" || passwordOne ==="";
 		return(
 		<div className="row">
@@ -70,14 +84,18 @@ class SignUpForm extends Component {
 				<input className="form-control" value={passwordTwo} name="passwordTwo" 
 				onChange={this.onChange} type="password" placeoder="Password"/>
 			</div>	
-			<button className="btn btn-primary">SignUp</button>
-			 {error && <p className="alert alert-danger">{error.message}</p>}	
+			<button disabled={isInvalid} className="btn btn-primary">SignUp</button>
+			 {error && <div className="alert alert-danger">{error.message}</div>}	
 		</form>
 		</div>
 		</div>
 		);
 	}
 }
+const SignUpForm = compose(
+  withRouter,
+  withFirebase,
+)(SignUpFormBase);
 const SignUpLink = () => (
   <p>
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
