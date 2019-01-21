@@ -3,10 +3,10 @@ Install
 ## Clone
 git clone https://github.com/langhoangtien/nodejs.git
 
-Install dependencies
-## `npm install'
+## Install dependencies
+### `npm install'
 
-Create .evn file
+Create .evn file with firebase key in root folder
 ## Available Scripts
 
 In the project directory, you can run:
