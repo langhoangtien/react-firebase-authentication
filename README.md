@@ -1,22 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Install
 
-git clone https://github.com/langhoangtien/nodejs.git
-cd react-firebase-authentication
-npm install
+git clone https://github.com/langhoangtien/nodejs.git<br>
+cd react-firebase-authentication<br>
+npm install<br>
 ## Firebase Configuration
-copy/paste your configuration from your Firebase project's dashboard into one of these files
-src/components/Firebase/firebase.js file
-.env file
-.env.development and .env.production files
-The .env or .env.development and .env.production files could look like the following then:
+Create .env file in root folder <br>
+The .env or .env.development and .env.production files could look like the following then: get key infomation in your config firebase<br>
 
-REACT_APP_API_KEY=AIzaSyBtxZ3phPeXcsZsRTySIXa7n33NtQ
-REACT_APP_AUTH_DOMAIN=react-firebase-s2233d64f8.firebaseapp.com
-REACT_APP_DATABASE_URL=https://react-firebase-s2233d64f8.firebaseio.com
-REACT_APP_PROJECT_ID=react-firebase-s2233d64f8
-REACT_APP_STORAGE_BUCKET=react-firebase-s2233d64f8.appspot.com
-REACT_APP_MESSAGING_SENDER_ID=701928454501
+REACT_APP_API_KEY=apiKey<br>
+REACT_APP_AUTH_DOMAIN=authDomain<br>
+REACT_APP_DATABASE_URL=databaseURL<br>
+REACT_APP_PROJECT_ID=projectId<br>
+REACT_APP_STORAGE_BUCKET=storageBucket<br>
+REACT_APP_MESSAGING_SENDER_ID=messagingSenderId<br>
 ## Available Scripts
 
 In the project directory, you can run:
