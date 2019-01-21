@@ -4,7 +4,7 @@ Install
 git clone https://github.com/langhoangtien/nodejs.git
 
 ## Install dependencies
-### `npm install'
+### `npm install`
 
 Create .evn file with firebase key in root folder
 ## Available Scripts
