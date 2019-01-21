@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install
+#Clone
+git clone https://github.com/langhoangtien/nodejs.git
 
+Install dependencies
+##`npm install'
+
+Create .evn file
 ## Available Scripts
 
 In the project directory, you can run:
