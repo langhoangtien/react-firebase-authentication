@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Install
 
-### `git clone https://github.com/langhoangtien/nodejs.git`<br>
+### `git clone https://github.com/langhoangtien/react-firebase-authentication.git`<br>
 ### `cd react-firebase-authentication`<br>
 ### `npm install`<br>
 ## Firebase Configuration
