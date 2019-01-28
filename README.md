@@ -2,8 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Install
 
 git clone https://github.com/langhoangtien/nodejs.git<br>
-cd react-firebase-authentication<br>
-npm install<br>
+###`cd react-firebase-authentication`<br>
+###`npm install`<br>
 ## Firebase Configuration
 Create .env file in root folder <br>
 The .env or .env.development and .env.production files could look like the following then: get key infomation in your config firebase<br>
